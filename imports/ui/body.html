@@ -1,0 +1,111 @@
+<body>
+
+<div class="container">
+    <div class="noprint"> <header>
+      <div class="logo"><img src="img/PadelerosLogo.png" width="250" height="150" alt="logo" ></div>
+      {{> loginButtons}}
+    </header></div>
+
+ 
+  {{#if currentUser}}
+  <div class="noprint">
+    <h2> Who's playing this weekend </h2>
+    <p>Tick each person who is playing and generate the teams below </p>
+    
+    <p>{{> checkall}}  {{> uncheckall}} </p>
+    
+    <ul>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </ul>
+    
+    <p>{{> Count}}</p>
+
+    
+    <h3> Add a new player</h3> 
+      <p> Add a new player with the form below:<br />
+       Ability can be any number between 0.00 and 6.00, 0 being a professional and 6 being a beginner </p>
+
+
+    <p>{{> NewPlayerForm}}</p>
+    
+    
+    <h2> Generate the teams </h2> 
+      <p> There are 3 types of teams - Random, Social and Competitive </p>  
+
+      <p> <strong>Random </strong> teams are exactly that. Anyone of any level could be playing with or against each other</p>
+        <p>{{> GenerateTeamsRandom}}</p>
+        <p> </p>
+        <p> </p>
+
+      <p> <strong>Social</strong> teams are loosely matched by ability with a random element thrown in to keep it social</p>
+        <p>{{> GenerateTeamsSocial}}</p>
+        <p> </p>
+        <p> </p>
+        
+      <p> <strong>Competitive </strong> teams are strictly matched by ability </p>
+        <p>{{> GenerateTeamsComp}}</p>
+        <p> </p>
+        <p> </p>
+    
+    </div>
+
+    <h4> First Matches </h4>
+        <ul>   
+          {{#each teams1}}
+          {{> team1}}
+        {{/each}}
+        </ul>
+        <br />
+        <div class="noprint"><p>{{> GenerateTeamsRandom1}} {{> GenerateTeamsSocial1}} {{> GenerateTeamsComp1}} </p> </div>
+
+        
+       <h4> Second Matches </h4>
+        <ul>
+          {{#each teams2}}
+            {{> team1}}
+          {{/each}}
+        </ul> 
+        <br />
+        <div class="noprint"><p>{{> GenerateTeamsRandom2}} {{> GenerateTeamsSocial2}} {{> GenerateTeamsComp2}}</p></div>
+        
+    <h4> Third Matches </h4>
+        <ul>
+          {{#each teams3}}
+            {{> team1}}
+          {{/each}}
+        </ul> 
+        <br />
+       <div class="noprint"> <p>{{> GenerateTeamsRandom3}} {{> GenerateTeamsSocial3}} {{> GenerateTeamsComp3}}</p></div>
+        
+      <div class="noprint">{{> printmatches}}  </div>
+        
+   {{else}}
+     <p> Padeleros automatically generates teams for Social Padel groups</p>
+     <p> All you have to do is tick who will be playing:</p>
+     <p><div class="Screenshot"><img src="img/who_playing.png" width="458" height="702" alt="Who's playing this weekend" ></div></p>
+     <p></p>
+     <p><strong>You can choose either Competitive, Social or Random teams</strong></p>
+     <p>Competitive teams are matched strictly on ability:</p>
+     <p><div class="Screenshot"><img src="img/competitive_teams.png" width="472" height="475" alt="Competitive teams" ></div></p>
+     <p></p>
+     <p></p>
+     <p>Social teams are matched loosely on ability with a rndom element thrown in to make it social:</p>
+     <p><div class="Screenshot"><img src="img/social_teams.png" width="476" height="474" alt="Social teams" ></div></p>
+     <p></p>
+     <p></p>
+     <p>Random teams are totally random, anyone could play with anyone else:</p>
+     <p><div class="Screenshot"><img src="img/random_teams.png" width="486" height="464" alt="Random teams" ></div></p>     
+     <p></p>
+     <p></p>
+
+     <p> Remember it's a fun game, a social group and fun for all the family. Here's a dancing panda</p>
+     
+    <div class="panda"><iframe src="//giphy.com/embed/7cuDUTd6eKgSY" width="480" height="270"
+    frameBorder="0" class="giphy-embed" allowFullScreen> </iframe>
+    </div>
+  {{/if}} 
+
+</div>
+</body>

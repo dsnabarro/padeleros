@@ -1,0 +1,45 @@
+
+<template name="checkall">
+    <input type="button" value="Tick all players" checked="{{IsChecked}}" class="checkall"  />
+</template>
+
+<template name="uncheckall">
+    <input type="button"  value="Untick all players" checked="{{IsChecked}}" class="uncheckall"  />
+</template>
+
+
+<template name="player">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{name}} </span> <span class="text"> {{ability}} </span>
+
+  </li>
+</template>
+
+<template name="AddPlayerForm">
+    <h2> Add a New Player</h2>
+    <form class="new-player">
+        <input type="text" name="name" placeholder="Player Name">
+        <input type="text" name="gender" placeholder="Male / Female">
+        <input type="number" name="ability" step="any" placeholder="Ability 0-6" >
+        <input type="submit" value="Add Player">
+    </form>
+</template>
+
+
+<template name="NewPlayerForm">
+  {{#autoForm collection= formCollection id="NewPlayerForm" type="insert" }}
+    <fieldset>
+      <legend>New Player</legend>
+      {{> afQuickField name='name'}}
+      {{> afQuickField name='gender'}}
+      {{> afQuickField name='ability'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>
+
+
