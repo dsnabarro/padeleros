@@ -26,7 +26,7 @@
     <h3> Add a new player</h3> 
       <p> Add a new player with the form below:<br />
        Ability can be any number between 0.00 and 6.00, 0 being a professional and 6 being a beginner </p>
-
+      <p> Gender can be either male or female</p>
 
     <p>{{> NewPlayerForm}}</p>
     
@@ -51,7 +51,7 @@
     
     </div>
 
-    <h4> First Matches </h4>
+    <h4> First Matches {{> header1}}</h4>
         <ul>   
           {{#each teams1}}
           {{> team1}}

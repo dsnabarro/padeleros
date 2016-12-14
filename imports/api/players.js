@@ -57,8 +57,8 @@ Schemas.Players = new SimpleSchema({
   optional: true,
 },
 });
-
 Players.attachSchema(Schemas.Players);
+
 
 Players.allow({
   insert: function () {

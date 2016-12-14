@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import { Players } from '../api/players.js';
+import { Headers } from '../api/players.js';
 import { teams1 } from '../api/players.js';
 
 import './task.js';
@@ -9,6 +10,7 @@ import './body.html';
  
 Meteor.subscribe('tasks');
 Meteor.subscribe('players');
+Meteor.subscribe('headers');
  
 Template.body.helpers({
   tasks() {
@@ -64,6 +66,9 @@ Template.Count.helpers({
   }
 });
 
+Template.header1.helpers({
+
+});
 
 
 Template.body.events({
